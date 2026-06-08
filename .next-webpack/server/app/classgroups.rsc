@@ -1,0 +1,22 @@
+1:"$Sreact.fragment"
+2:I[19782,["346","static/chunks/346-0c1fd5c207f0539f.js","177","static/chunks/app/layout-11fc3ca0071039e5.js"],"AuthProvider"]
+3:I[90793,["346","static/chunks/346-0c1fd5c207f0539f.js","177","static/chunks/app/layout-11fc3ca0071039e5.js"],"default"]
+4:I[57121,[],""]
+5:I[74581,[],""]
+6:I[61304,[],"ClientPageRoot"]
+7:I[90568,["757","static/chunks/757-d5dcafefb1cb0cc4.js","941","static/chunks/app/classgroups/page-fe3d0066263814b6.js"],"default"]
+a:I[90484,[],"OutletBoundary"]
+b:"$Sreact.suspense"
+e:I[90484,[],"ViewportBoundary"]
+10:I[90484,[],"MetadataBoundary"]
+12:I[27123,[],"default",1]
+:HL["/_next/static/css/1aba655d55e34038.css","style"]
+0:{"P":null,"c":["","classgroups"],"q":"","i":false,"f":[[["",{"children":["classgroups",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/1aba655d55e34038.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"vi","className":"__variable_3472b2 h-full antialiased","children":["$","body",null,{"className":"min-h-full bg-[#fafbfe] font-sans text-slate-800 antialiased","children":["$","$L2",null,{"children":["$","$L3",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[["$","$L6",null,{"Component":"$7","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@8","$@9"]}}],null,["$","$La",null,{"children":["$","$b",null,{"name":"Next.MetadataOutlet","children":"$@c"}]}]]}],{},null,false,null]},null,false,"$@d"]},null,false,null],["$","$1","h",{"children":[null,["$","$Le",null,{"children":"$Lf"}],["$","div",null,{"hidden":true,"children":["$","$L10",null,{"children":["$","$b",null,{"name":"Next.Metadata","children":"$L11"}]}]}],null]}],false]],"m":"$undefined","G":["$12",[]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"K9LIU9fXQw1zEL3BN0icM"}
+13:[]
+d:"$W13"
+8:{}
+9:"$0:f:0:1:1:children:1:children:0:props:children:0:props:serverProvidedParams:params"
+f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+14:I[86869,[],"IconMark"]
+c:null
+11:[["$","title","0",{"children":"THT Center - Hệ thống quản lý trung tâm"}],["$","meta","1",{"name":"description","content":"Hệ thống quản lý học viên, lớp học, công nợ và doanh thu THT Center"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?603d046c9a6fdfbb","type":"image/x-icon","sizes":"16x16"}],["$","link","3",{"rel":"icon","href":"https://tht.edu.vn/wp-content/uploads/2023/05/THT-Logo.png"}],["$","$L14","4",{}]]

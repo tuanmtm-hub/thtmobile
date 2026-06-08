@@ -1,0 +1,22 @@
+{
+  "name": "THT Center Management",
+  "short_name": "THT Center",
+  "description": "Hệ thống quản lý học viên, lớp học, công nợ và doanh thu THT Center",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logo-tht-2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-tht-2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

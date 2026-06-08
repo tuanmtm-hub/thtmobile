@@ -1,0 +1,1 @@
+globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/api/proxy/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"D:\\Tuanmtm\\Google Antigravity\\Vercel THT\\next-frontend\\src\\app\\api\\proxy\\route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}};

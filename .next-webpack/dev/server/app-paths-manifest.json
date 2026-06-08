@@ -1,0 +1,8 @@
+{
+  "/api/proxy/route": "app/api/proxy/route.js",
+  "/reports/page": "app/reports/page.js",
+  "/classes/page": "app/classes/page.js",
+  "/students/page": "app/students/page.js",
+  "/page": "app/page.js",
+  "/revenue/page": "app/revenue/page.js"
+}

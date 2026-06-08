@@ -1,0 +1,1239 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafbfe;
+  --foreground: #1e293b;
+}
+
+/* Base style resets */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Keyframes animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+/* Utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* ==========================================================================
+   PREMIUM THT TABLE REUSABLE CSS SYSTEM
+   Can be applied to any page to achieve unified beautiful data grids.
+   ========================================================================== */
+.tht-table-container {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  /* 16px */
+  border: 1px solid #f1f5f9;
+  /* border-slate-100 */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  /* shadow-sm */
+  overflow: hidden;
+}
+
+.tht-table-wrapper {
+  overflow-x: auto;
+}
+
+.tht-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.tht-table-thead {
+  background-color: #21398A;
+  border-bottom: 2px solid #122258;
+}
+
+.tht-table-th {
+  padding: 1rem 1.5rem;
+  /* py-4 px-6 */
+  font-size: 0.75rem;
+  /* text-xs */
+  font-weight: 700;
+  /* font-bold */
+  color: #ffffff;
+  /* text-white */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  /* tracking-wider */
+}
+
+.tht-table-tbody {
+  display: table-row-group;
+}
+
+.tht-table-tr {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.tht-table-tr:hover {
+  background-color: #e2e8f0 !important;
+  /* Extra visible darker hover background */
+}
+
+/* Border division for rows inside tbody */
+.tht-table-tbody>.tht-table-tr {
+  border-bottom: 1px solid #f1f5f9;
+  /* divide-slate-100 */
+}
+
+.tht-table-tbody>.tht-table-tr:last-child {
+  border-bottom: none;
+}
+
+.tht-table-td {
+  padding: 1rem 1.5rem;
+  /* py-4 px-6 */
+  font-size: 0.875rem;
+  /* text-sm */
+  color: #475569;
+  /* text-slate-600 */
+  font-weight: 500;
+  /* font-medium */
+  vertical-align: middle;
+}
+
+/* Premium Badges */
+.tht-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.tht-badge-success {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.tht-badge-danger {
+  background-color: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.tht-badge-warning {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.tht-badge-info {
+  background-color: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.tht-badge-zinc {
+  background-color: #f4f4f5;
+  color: #27272a;
+  border: 1px solid #e4e4e7;
+}
+
+.tht-badge-purple {
+  background-color: #faf5ff;
+  color: #6b21a8;
+  border: 1px solid #e9d5ff;
+}
+
+/* --- THT Reusable Pagination --- */
+.tht-pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f1f5f9;
+  /* border-slate-100 */
+  padding: 1rem 1.5rem;
+  /* px-6 py-4 */
+  background-color: #ffffff;
+  border-bottom-right-radius: 1rem;
+  /* rounded-b-2xl (16px) */
+  border-bottom-left-radius: 1rem;
+}
+
+.tht-pagination-info {
+  font-size: 0.875rem;
+  /* text-sm */
+  color: #64748b;
+  /* text-slate-500 */
+  font-weight: 500;
+}
+
+.tht-pagination-info span {
+  font-weight: 600;
+  color: #334155;
+  /* text-slate-700 */
+}
+
+.tht-pagination-list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tht-pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.875rem;
+  /* px-3.5 py-2 */
+  font-size: 0.75rem;
+  /* text-xs */
+  font-weight: 700;
+  color: #475569;
+  /* text-slate-600 */
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  /* border-slate-200 */
+  border-radius: 0.75rem;
+  /* rounded-xl (12px) */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+.tht-pagination-btn:hover:not(:disabled) {
+  background-color: #f8fafc;
+  /* bg-slate-50 */
+  border-color: #cbd5e1;
+}
+
+.tht-pagination-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.tht-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tht-pagination-num {
+  width: 2.25rem;
+  /* w-9 */
+  height: 2.25rem;
+  /* h-9 */
+  padding: 0;
+}
+
+.tht-pagination-num-active {
+  background-color: #21398A;
+  color: #ffffff;
+  border-color: #21398A;
+  box-shadow: 0 4px 12px rgba(33, 57, 138, 0.2);
+}
+
+.tht-pagination-num-active:hover {
+  background-color: #1a2e70;
+  color: #ffffff;
+  border-color: #1a2e70;
+}
+
+
+
+/* Info Section Card from css.html */
+.info-section-card {
+  background: #fff;
+  border: 1px solid #dddddd;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgb(169 169 169);
+}
+
+.section-card-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #7d7d7d;
+  padding-bottom: 0.75rem;
+  color: #0154db;
+  /* Default Blue */
+}
+
+.section-title-green {
+  color: #10b981 !important;
+}
+
+.section-title-purple {
+  color: #6366f1 !important;
+}
+
+/* Reusable Standardized Input & Selection Form Styles for THT Web App */
+.tht-input-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.tht-input {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  outline: none;
+  color: #1e293b;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.tht-input:focus {
+  border-color: #21398A;
+  box-shadow: 0 0 0 2px rgba(33, 57, 138, 0.08);
+}
+
+.tht-input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.tht-select {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  outline: none;
+  color: #1e293b;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.tht-select:focus {
+  border-color: #21398A;
+  box-shadow: 0 0 0 2px rgba(33, 57, 138, 0.08);
+}
+
+@media (max-width: 640px) {
+  .tht-pagination-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem 1rem;
+  }
+
+  .tht-pagination-list {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Reusable Loading & Empty State Styles */
+.tht-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 6rem 0;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.tht-loading-spinner {
+  animation: spin 1s linear infinite;
+  color: #21398A;
+}
+
+.tht-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 6rem 0;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.tht-empty-icon {
+  color: #cbd5e1;
+}
+
+/* THT Toolbar (Search, Tabs, and Count) */
+.tht-toolbar {
+  @apply bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-5;
+}
+
+.tht-toolbar-tabs {
+  @apply flex flex-wrap gap-2.5 pb-4 border-b border-slate-100;
+}
+
+.tht-tab-btn {
+  @apply px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-[0.97];
+}
+
+.tht-tab-btn-active {
+  @apply bg-[#21398A] text-white shadow-md shadow-[#21398a]/20 scale-105;
+}
+
+.tht-toolbar-controls {
+  @apply flex flex-col lg:flex-row lg:items-center justify-between gap-4;
+}
+
+.tht-toolbar-search {
+  @apply flex flex-col sm:flex-row flex-1 gap-3 max-w-2xl;
+}
+
+.tht-search-wrapper {
+  @apply relative flex-1;
+}
+
+.tht-search-icon {
+  @apply absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400;
+}
+
+.tht-search-input {
+  @apply w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 outline-none text-slate-800 focus:border-[#21398A] focus:ring-4 focus:ring-[#21398A]/5 transition-all text-sm font-medium;
+}
+
+.tht-found-count {
+  @apply flex items-center gap-3 text-sm text-slate-500 font-semibold bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-100 self-start lg:self-auto;
+}
+
+/* ==========================================================================
+   THT PREMIUM REUSABLE KPI / STATS CARD SYSTEM
+   ========================================================================== */
+.tht-kpi-card {
+  @apply bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex items-center transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+}
+
+/* Icon on left (standard student/teacher dashboard layout) */
+.tht-kpi-card-left {
+  @apply gap-4;
+}
+
+/* Icon on right (classes/revenue stats layout) */
+.tht-kpi-card-right {
+  @apply justify-between;
+}
+
+.tht-kpi-label {
+  @apply text-xs font-bold text-slate-400 uppercase tracking-wider block;
+}
+
+.tht-kpi-value {
+  @apply text-2xl lg:text-3xl font-extrabold text-slate-800 mt-0.5 block;
+}
+
+/* Text color helper classes for values */
+.tht-kpi-value-primary {
+  @apply text-[#21398A];
+}
+
+.tht-kpi-value-emerald {
+  @apply text-emerald-600;
+}
+
+.tht-kpi-value-amber {
+  @apply text-amber-600;
+}
+
+.tht-kpi-value-sky {
+  @apply text-sky-600;
+}
+
+.tht-kpi-value-slate {
+  @apply text-slate-600;
+}
+
+.tht-kpi-value-rose {
+  @apply text-rose-600;
+}
+
+.tht-kpi-icon-wrapper {
+  @apply w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110;
+}
+
+/* Icon Wrapper Background & Text Color helper classes */
+.tht-kpi-icon-primary {
+  @apply bg-blue-50 text-[#21398A];
+}
+
+.tht-kpi-icon-emerald {
+  @apply bg-emerald-50 text-emerald-600;
+}
+
+.tht-kpi-icon-amber {
+  @apply bg-amber-50 text-amber-600;
+}
+
+.tht-kpi-icon-sky {
+  @apply bg-sky-50 text-sky-600;
+}
+
+.tht-kpi-icon-slate {
+  @apply bg-slate-50 text-slate-600;
+}
+
+.tht-kpi-icon-rose {
+  @apply bg-rose-50 text-rose-600;
+}
+
+/* ==========================================================================
+   THT PREMIUM REUSABLE ACTION ICON BUTTONS
+   ========================================================================== */
+.tht-action-btn {
+  @apply p-2 rounded-lg transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center border border-transparent;
+}
+
+.tht-action-btn svg {
+  @apply w-[20px] h-[20px];
+}
+
+.tht-action-btn-amber {
+  @apply text-amber-500 hover:text-amber-600 hover:bg-amber-50 hover:border-amber-100;
+}
+
+.tht-action-btn-blue {
+  @apply text-blue-500 hover:text-[#21398A] hover:bg-blue-50 hover:border-blue-100;
+}
+
+.tht-action-btn-red {
+  @apply text-red-500 hover:text-rose-600 hover:bg-red-50 hover:border-red-100;
+}
+
+.tht-action-btn-green {
+  @apply text-green-600 hover:text-emerald-700 hover:bg-green-50 hover:border-green-100;
+}
+
+.tht-action-btn-indigo {
+  @apply text-indigo-600 hover:text-[#21398A] hover:bg-indigo-50 hover:border-indigo-100;
+}
+
+/* ==========================================================================
+   THT PREMIUM REUSABLE TEXT ACTION BUTTONS
+   ========================================================================== */
+.tht-text-action-btn {
+  @apply px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 cursor-pointer active:scale-95 inline-flex items-center justify-center gap-1.5 border;
+}
+
+.tht-text-action-btn-gray {
+  @apply bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200 hover:text-slate-800 hover:border-slate-300;
+}
+
+.tht-text-action-btn-blue {
+  @apply bg-blue-50 text-blue-600 border-blue-100 hover:bg-blue-100 hover:text-[#21398A] hover:border-blue-200;
+}
+
+.tht-text-action-btn-green {
+  @apply bg-green-50 text-green-600 border-green-100 hover:bg-green-100 hover:text-emerald-700 hover:border-green-200;
+}
+
+.tht-text-action-btn-red {
+  @apply bg-red-50 text-red-500 border-red-100 hover:bg-red-100 hover:text-rose-600 hover:border-red-200;
+}
+
+.tht-text-action-btn-amber {
+  @apply bg-amber-50 text-amber-600 border-amber-100 hover:bg-amber-100 hover:text-amber-700 hover:border-amber-200;
+}
+
+.tht-text-action-btn-excel {
+  @apply bg-emerald-50 text-[#107c41] border-emerald-100 hover:bg-emerald-100 hover:text-[#0b592e] hover:border-emerald-200;
+}
+
+/* ==========================================================================
+   THT PREMIUM REUSABLE BUTTONS
+   ========================================================================== */
+.tht-btn-outline {
+  @apply flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 text-slate-600 hover:text-[#21398A] hover:bg-slate-50 rounded-xl shadow-xs transition-all active:scale-[0.98] cursor-pointer;
+}
+
+.tht-btn-primary {
+  @apply flex items-center gap-2 px-4 py-2.5 bg-[#21398A] text-white hover:bg-[#1a2d6e] rounded-xl shadow-sm hover:shadow-md transition-all active:scale-[0.98] cursor-pointer;
+}
+
+/* ==========================================================================
+   ALIASES FOR REUSABLE CSS SYSTEM (Requested by User)
+   ========================================================================== */
+.thttable {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.thttable-tr {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.thttable-tr:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.thtaction {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+  font-weight: 500;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.thtaction-btn {
+  @apply p-1.5 rounded-lg transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center border border-transparent;
+}
+
+.thtaction-btn svg {
+  @apply w-[20px] h-[20px];
+}
+
+@keyframes shrinkBar {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+/* ==========================================================================
+   THT BREADCRUMB REUSABLE CSS SYSTEM
+   ========================================================================== */
+.tht-breadcrumb-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 650;
+  color: #64748b;
+  padding: 0.25rem 0;
+}
+
+.tht-breadcrumb-item {
+  color: #475569;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.tht-breadcrumb-item:hover {
+  color: #21398A;
+}
+
+.tht-breadcrumb-separator {
+  color: #cbd5e1;
+  user-select: none;
+  margin: 0 0.25rem;
+}
+
+.tht-breadcrumb-current {
+  color: #21398A;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   PRINT STYLES FOR RECEIPTS (THT ACADEMY SYSTEM)
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 0 !important;
+  }
+
+  /* Hide all top-level children of body except the print receipt area */
+  body>*:not(#receiptPrintArea) {
+    display: none !important;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #receiptPrintArea {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    background-color: white !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Prevent page breaks inside the receipt container */
+  .receipt-container {
+    page-break-inside: avoid;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    max-width: 680px !important;
+  }
+}
+
+@media screen {
+  #receiptPrintArea {
+    display: none !important;
+  }
+}
+
+.receipt-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.receipt-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a3a5c;
+  margin: 0;
+}
+
+.receipt-brand {
+  text-align: right;
+}
+
+.receipt-brand img {
+  height: 50px;
+}
+
+.receipt-brand-name {
+  font-size: 11px;
+  color: #1a3a5c;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.receipt-brand-addr {
+  font-size: 10px;
+  color: #555;
+}
+
+.receipt-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  font-size: 12px;
+}
+
+.receipt-info-label {
+  font-weight: 600;
+  min-width: 200px;
+  color: #555;
+}
+
+.receipt-info-value {
+  font-weight: 700;
+  color: #1a3a5c;
+}
+
+.receipt-student-info {
+  background: #eef4fb;
+  border-left: 3px solid #2a6fb5;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.receipt-student-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.receipt-fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.receipt-fee-table th {
+  background: #2a6fb5;
+  color: white;
+  padding: 6px 10px;
+  text-align: left;
+  font-size: 12px;
+}
+
+.receipt-fee-table td {
+  padding: 5px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.receipt-fee-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+.receipt-highlight-row td {
+  background: #fff3cd;
+  font-weight: 700;
+}
+
+.receipt-total-row td {
+  background: #d4edda;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.receipt-result-row td {
+  background: #cce5ff;
+  font-weight: 700;
+}
+
+.receipt-final-row td {
+  background: #f0ad4e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.receipt-footer {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #d32f2f;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.receipt-payment-info {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* THT Custom Styles for Full-page Bulk Email Composer */
+.tht-bulk-composer-container {
+  background-color: #f8fafc;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.tht-bulk-student-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.tht-bulk-student-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-color: #e2e8f0;
+}
+
+.tht-bulk-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  outline: none;
+  font-size: 0.825rem;
+  line-height: 1.5;
+  font-family: inherit;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.2s;
+  min-height: 140px;
+  resize: vertical;
+}
+
+.tht-bulk-textarea:focus {
+  border-color: #21398a;
+  box-shadow: 0 0 0 4px rgba(33, 57, 138, 0.05);
+}
+
+/* ==========================================================================
+   THT PREMIUM PERMISSION ERROR MODAL
+   ========================================================================== */
+.tht-perm-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(4px) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10000;
+  animation: fadeInBackdrop 0.25s ease-out forwards;
+}
+
+.tht-perm-modal-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1.75rem;
+  text-align: center;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tht-perm-modal-icon-container {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background-color: #fff1f2;
+  color: #e11d48;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.tht-perm-modal-icon-container svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+.tht-perm-modal-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.tht-perm-modal-message {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.tht-perm-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #21398A;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(33, 57, 138, 0.15);
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+.tht-perm-modal-btn:hover {
+  background-color: #1a2d6e;
+  box-shadow: 0 6px 16px rgba(33, 57, 138, 0.25);
+  transform: translateY(-1px);
+}
+
+.tht-perm-modal-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   THT MOBILE RESPONSIVE UI STYLES
+   ========================================================================== */
+
+/* Utility visibility classes */
+@media (min-width: 768px) {
+  .tht-mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tht-desktop-only {
+    display: none !important;
+  }
+}
+
+/* Mobile card container */
+.tht-mobile-card {
+  background-color: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tht-mobile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(33, 57, 138, 0.04), 0 4px 6px -2px rgba(33, 57, 138, 0.02);
+  border-color: #e2e8f0;
+}
+
+/* Card Header */
+.tht-mobile-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.5rem;
+}
+
+.tht-mobile-card-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* Card Row */
+.tht-mobile-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 0.5rem;
+}
+
+.tht-mobile-card-label {
+  color: #64748b;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-shrink: 0;
+}
+
+.tht-mobile-card-value {
+  color: #334155;
+  font-weight: 700;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* Actions Row */
+.tht-mobile-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* CSS for Horizontal Scrollable Tabs */
+.tht-mobile-tabs-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.tht-mobile-tabs-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+/* Hide Google Translate raw elements to preserve premium UI */
+.goog-te-banner-frame,
+.goog-te-menu-value,
+.goog-tooltip,
+.skiptranslate,
+#google_translate_element {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Premium Staggered Slide Down Animation for Dashboard Cards */
+@keyframes thtCardSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tht-dashboard-kpi-card {
+  opacity: 0;
+  animation: thtCardSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tht-dashboard-kpi-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.tht-dashboard-kpi-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.tht-dashboard-kpi-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.tht-dashboard-kpi-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.tht-dashboard-kpi-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.tht-dashboard-kpi-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.tht-dashboard-kpi-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.tht-dashboard-kpi-card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.tht-dashboard-kpi-card:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.tht-dashboard-kpi-card:nth-child(10) {
+  animation-delay: 1.0s;
+}
+
+.tht-dashboard-kpi-card:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+.tht-dashboard-kpi-card:nth-child(12) {
+  animation-delay: 1.2s;
+}
+
+/* ==========================================================================
+   THT REUSABLE SCROLLBAR FOR GRIDS
+   ========================================================================== */
+.grid-scroll-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.grid-scroll-container::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 9px;
+}
+.grid-scroll-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9px;
+}
+.grid-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

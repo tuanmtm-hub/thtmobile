@@ -1,0 +1,21 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/api/proxy/route": "app/api/proxy/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/classgroups/page": "app/classgroups/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/rooms/page": "app/rooms/page.js",
+  "/shifts/page": "app/shifts/page.js",
+  "/classes/page": "app/classes/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/calendar/page": "app/calendar/page.js",
+  "/holidays/page": "app/holidays/page.js",
+  "/revenue/page": "app/revenue/page.js",
+  "/reports/page": "app/reports/page.js",
+  "/teaching-time/page": "app/teaching-time/page.js",
+  "/vouchers/page": "app/vouchers/page.js",
+  "/students/page": "app/students/page.js",
+  "/teachers/page": "app/teachers/page.js"
+}
