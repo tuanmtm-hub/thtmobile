@@ -25,6 +25,17 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const DEFAULT_AUTH_ROUTE = '/dashboard';
 
+const getApiUrl = (): string => {
+  if (typeof window !== 'undefined') {
+    const isCapacitor = window.location.protocol === 'capacitor:' || 
+                        window.location.hostname === 'localhost' && window.location.port === '';
+    if (isCapacitor) {
+      return 'https://script.google.com/macros/s/AKfycbxgS5bzaFpvbENBGb7tuzf26b1tUznOwYhs3tU4TXKtjWR7d1AZkQ647yaaubpv1Fns/exec';
+    }
+  }
+  return '/api/proxy';
+};
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -74,7 +85,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
 
         // Validate token with proxy API
-        const response = await fetch('/api/proxy', {
+        const response = await fetch(getApiUrl(), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ action: 'validateToken', token }),
@@ -130,7 +141,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (username: string, password: string, rememberMe: boolean) => {
     try {
-      const response = await fetch('/api/proxy', {
+      const response = await fetch(getApiUrl(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -207,7 +218,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       if (!user?.email) return { success: false, message: 'Không xác định được email người dùng!' };
 
-      const response = await fetch('/api/proxy', {
+      const response = await fetch(getApiUrl(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

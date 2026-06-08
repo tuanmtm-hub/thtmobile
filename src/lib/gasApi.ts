@@ -37,6 +37,19 @@ export interface GasRequestParams {
   signal?: AbortSignal;
 }
 
+// --- Hàm xác định endpoint API tự động ---
+const getApiUrl = (): string => {
+  if (typeof window !== 'undefined') {
+    // Phát hiện nếu đang chạy trong môi trường app di động (Capacitor)
+    const isCapacitor = window.location.protocol === 'capacitor:' || 
+                        window.location.hostname === 'localhost' && window.location.port === '';
+    if (isCapacitor) {
+      return 'https://script.google.com/macros/s/AKfycbxgS5bzaFpvbENBGb7tuzf26b1tUznOwYhs3tU4TXKtjWR7d1AZkQ647yaaubpv1Fns/exec';
+    }
+  }
+  return '/api/proxy';
+};
+
 // --- Hàm tiện ích chính ---
 
 /**
@@ -59,7 +72,7 @@ export async function gasRequest<T = any>(
   params: GasRequestParams
 ): Promise<GasResponse<T>> {
   try {
-    const response = await fetch('/api/proxy', {
+    const response = await fetch(getApiUrl(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -109,7 +122,7 @@ export async function gasLegacyRequest<T = any>(
   signal?: AbortSignal
 ): Promise<GasResponse<T>> {
   try {
-    const response = await fetch('/api/proxy', {
+    const response = await fetch(getApiUrl(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
